@@ -185,7 +185,7 @@ namespace Education1
             }
 
             Console.WriteLine(sum);
-
+            Console.WriteLine("string for test");
         }
     }
 }
