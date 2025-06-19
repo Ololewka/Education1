@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Diagnostics;
+using System.Net.Http.Headers;
 using System.Runtime.ConstrainedExecution;
 
 namespace Education1
@@ -173,19 +174,78 @@ namespace Education1
             //Console.WriteLine(Math.Pow(A, B));
             
 
-            int sum = 0;
-            char[] num = Console.ReadLine().ToCharArray();
+            //int sum = 0;                                      //Сумма цифр в числе
+            //char[] num = Console.ReadLine().ToCharArray();
 
-            for (int i = 0; i < num.Length; i++)
+            //for (int i = 0; i < num.Length; i++)
+            //{
+            //    sum = sum + Convert.ToInt32(num[i]);
+            //    Console.WriteLine(num[i]);
+            //    Console.WriteLine(Convert.ToInt32(num[i]));
+            //    Console.WriteLine(sum);
+            //}
+
+            //Console.WriteLine(sum);
+            //Console.WriteLine("string for test");
+
+
+            //var rand = new Random();              //Заполнение массива случайными числами и их сортировка
+                                                    //                                            по модулю.
+            //int[] numbers = new int[8];
+
+            //for (int i =  0; i < numbers.Length; i++)
+            //{
+            //    numbers[i] = rand.Next(1,100);
+            //    //Console.Write(numbers[i] + " ");
+            //}
+
+            //Array.Sort(numbers);
+
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    Console.Write(numbers[i] + " ");
+            //}
+
+            int num = Convert.ToInt32(Console.ReadLine());
+            List<int> doublenum = new List<int>();
+            int end1 = 0;
+            int end2 = 0;
+            int k = 0;
+
+            while (num != 0)
             {
-                sum = sum + Convert.ToInt32(num[i]);
-                Console.WriteLine(num[i]);
-                Console.WriteLine(Convert.ToInt32(num[i]));
-                Console.WriteLine(sum);
+                doublenum.Add(num % 2);
+                num = num / 2;
             }
 
-            Console.WriteLine(sum);
-            Console.WriteLine("string for test");
+
+            int[] result = doublenum.ToArray();
+            int[] reverse = new int[result.Length];
+
+            for (int i = result.Length - 1;  i >= 0; i--)
+            {
+                reverse[k] = result[i];
+                
+                k = k + 1;
+            }
+
+            for (int i = 0;  i < result.Length; i++)
+            {
+                end1 += result[i] * Convert.ToInt32(Math.Pow(10, result.Length - i - 1));
+                end2 += reverse[i] * Convert.ToInt32(Math.Pow(10, reverse.Length - i - 1));
+            }
+
+            if (end1 == end2)
+            {
+                Console.WriteLine("Полиэндром в двоичной системе");
+            }
+            else
+            {
+                Console.WriteLine("Не полиэндром в двоичной системе");
+            }
+
+
+
         }
     }
 }
