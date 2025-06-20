@@ -86,6 +86,25 @@ namespace Education1
     //}
 
 
-     
+     interface IDevice                          //Интерфейс используется как и наследование
+    {
+        void enableScreen();
+    }
+
+    class Phone : IDevice
+    {
+        public void enableScreen()
+        {
+            Console.WriteLine("PHONE");
+        }
+    }
+
+    class Tablet : IDevice
+    {
+        public void enableScreen()
+        {
+            Console.WriteLine("TABLET");
+        }
+    }
 
 }

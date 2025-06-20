@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Runtime.ConstrainedExecution;
+using System.Xml.Linq;
 
 namespace Education1
 { 
@@ -267,14 +268,36 @@ namespace Education1
             //Console.WriteLine(apple.manufacturer + " " + apple.model + " " + apple.color);
             //Console.WriteLine(lenovo.manufacturer + " " + lenovo.model + " " + lenovo.color);
 
-           
-            Phone phone = new Phone();
-            Tablet tablet = new Tablet();
 
-            phone.enableScreen();
-            phone.powerOff();
-            tablet.enableScreen();
-            tablet.powerOff();
+            //Phone phone = new Phone();
+            //Tablet tablet = new Tablet();
+
+            //phone.enableScreen();
+            //tablet.enableScreen();
+
+
+            Dictionary<string, string> openWith = new Dictionary<string, string>();   // объявление и заполнение словаря
+
+            openWith.Add("txt", "notepad.exe");
+            openWith.Add("bmp", "paint.exe");
+            openWith.Add("dib", "paint.exe");
+            openWith.Add("rtf", "wordpad.exe");
+            
+            if (openWith.ContainsKey("bmp")) { 
+                foreach(KeyValuePair<string, string> type in openWith)
+                {
+                    Console.WriteLine(type.Key + " " + type.Value);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Нет такого");
+            }
+
+            if (openWith.TryAdd("bmp", "paint.exe") == true)
+            {
+                Console.WriteLine("Ну я добавил");
+            }
         }
     }
 }
