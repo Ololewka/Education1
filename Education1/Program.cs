@@ -172,7 +172,7 @@ namespace Education1
             //int B = Convert.ToInt32(Console.ReadLine());
 
             //Console.WriteLine(Math.Pow(A, B));
-            
+
 
             //int sum = 0;                                      //Сумма цифр в числе
             //char[] num = Console.ReadLine().ToCharArray();
@@ -190,7 +190,7 @@ namespace Education1
 
 
             //var rand = new Random();              //Заполнение массива случайными числами и их сортировка
-                                                    //                                            по модулю.
+            //                                            по модулю.
             //int[] numbers = new int[8];
 
             //for (int i =  0; i < numbers.Length; i++)
@@ -206,46 +206,75 @@ namespace Education1
             //    Console.Write(numbers[i] + " ");
             //}
 
-            int num = Convert.ToInt32(Console.ReadLine());
-            List<int> doublenum = new List<int>();
-            int end1 = 0;
-            int end2 = 0;
-            int k = 0;
 
-            while (num != 0)
-            {
-                doublenum.Add(num % 2);
-                num = num / 2;
-            }
+            //int num = Convert.ToInt32(Console.ReadLine());            //Полиэндром ли число в 
+            //List<int> doublenum = new List<int>();                    //          двоичной системе?
+            //int end1 = 0;
+            //int end2 = 0;
+            //int k = 0;
 
-
-            int[] result = doublenum.ToArray();
-            int[] reverse = new int[result.Length];
-
-            for (int i = result.Length - 1;  i >= 0; i--)
-            {
-                reverse[k] = result[i];
-                
-                k = k + 1;
-            }
-
-            for (int i = 0;  i < result.Length; i++)
-            {
-                end1 += result[i] * Convert.ToInt32(Math.Pow(10, result.Length - i - 1));
-                end2 += reverse[i] * Convert.ToInt32(Math.Pow(10, reverse.Length - i - 1));
-            }
-
-            if (end1 == end2)
-            {
-                Console.WriteLine("Полиэндром в двоичной системе");
-            }
-            else
-            {
-                Console.WriteLine("Не полиэндром в двоичной системе");
-            }
+            //while (num != 0)
+            //{
+            //    doublenum.Add(num % 2);
+            //    num = num / 2;
+            //}
 
 
+            //int[] result = doublenum.ToArray();
+            //int[] reverse = new int[result.Length];
 
+            //for (int i = result.Length - 1;  i >= 0; i--)
+            //{
+            //    reverse[k] = result[i];
+
+            //    k = k + 1;
+            //}
+
+            //for (int i = 0;  i < result.Length; i++)
+            //{
+            //    end1 += result[i] * Convert.ToInt32(Math.Pow(10, result.Length - i - 1));
+            //    end2 += reverse[i] * Convert.ToInt32(Math.Pow(10, reverse.Length - i - 1));
+            //}
+
+            //if (end1 == end2)
+            //{
+            //    Console.WriteLine("Полиэндром в двоичной системе");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Не полиэндром в двоичной системе");
+            //}
+
+
+            //Phone xiaomi = new Phone();                   //работа с классами и методами
+            //xiaomi.Manufacturer = "XIAOMI";
+            //xiaomi.Model = "7 PRO MAX TOP GODD CHINESEEE";
+
+            //Console.WriteLine(xiaomi.Manufacturer + " " + xiaomi.Model);
+
+
+
+            //Smartphone apple = new Smartphone();          \\наследование          
+
+            //Smartphone lenovo = new Smartphone();
+
+            //lenovo.manufacturer = "Lenovo";
+            //lenovo.model = "OOO DA SUKA";
+            //lenovo.color = "Yellow";
+
+
+
+            //Console.WriteLine(apple.manufacturer + " " + apple.model + " " + apple.color);
+            //Console.WriteLine(lenovo.manufacturer + " " + lenovo.model + " " + lenovo.color);
+
+           
+            Phone phone = new Phone();
+            Tablet tablet = new Tablet();
+
+            phone.enableScreen();
+            phone.powerOff();
+            tablet.enableScreen();
+            tablet.powerOff();
         }
     }
 }
