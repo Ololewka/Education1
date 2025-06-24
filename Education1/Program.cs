@@ -276,28 +276,67 @@ namespace Education1
             //tablet.enableScreen();
 
 
-            Dictionary<string, string> openWith = new Dictionary<string, string>();   // объявление и заполнение словаря
+            ////Dictionary<string, string> openWith = new Dictionary<string, string>();   // объявление и заполнение словаря
 
-            openWith.Add("txt", "notepad.exe");
-            openWith.Add("bmp", "paint.exe");
-            openWith.Add("dib", "paint.exe");
-            openWith.Add("rtf", "wordpad.exe");
-            
-            if (openWith.ContainsKey("bmp")) { 
-                foreach(KeyValuePair<string, string> type in openWith)
+            ////openWith.Add("txt", "notepad.exe");
+            ////openWith.Add("bmp", "paint.exe");
+            ////openWith.Add("dib", "paint.exe");
+            ////openWith.Add("rtf", "wordpad.exe");
+
+            ////if (openWith.ContainsKey("bmp")) { 
+            ////    foreach(KeyValuePair<string, string> type in openWith)
+            ////    {
+            ////        Console.WriteLine(type.Key + " " + type.Value);
+            ////    }
+            ////}
+            ////else
+            ////{
+            ////    Console.WriteLine("Нет такого");
+            ////}
+
+            ////if (openWith.TryAdd("bmp", "paint.exe") == true)
+            ////{
+            ////    Console.WriteLine("Ну я добавил");
+            ////}
+            ///
+
+
+            //var rand = new Random();                    //четные 3-е числа
+            //int k = 0;
+            //int[] numbers = new int[20];
+
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    numbers[i] = rand.Next(100, 999);
+            //    Console.Write(numbers[i] + " ");
+            //    if (numbers[i] % 2 == 0)
+            //    {
+            //        k = k + 1;
+            //    }
+            //}
+
+            //Console.WriteLine(" ");
+            //Console.WriteLine(k);
+
+
+            var rand = new Random();
+            int k = 0;
+            int[] numbers = new int[6];
+
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                numbers[i] = rand.Next(1,5);
+                Console.Write(numbers[i] + " ");
+                if (i % 2 != 0)
                 {
-                    Console.WriteLine(type.Key + " " + type.Value);
+                    k = k + numbers[i];
                 }
             }
-            else
-            {
-                Console.WriteLine("Нет такого");
-            }
 
-            if (openWith.TryAdd("bmp", "paint.exe") == true)
-            {
-                Console.WriteLine("Ну я добавил");
-            }
+            Console.WriteLine(" ");
+            Console.WriteLine(k);
+
+
         }
     }
 }
